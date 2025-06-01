@@ -709,132 +709,154 @@
             </div>
         </div>
     </section>
-
+    <style>
+        /* Remove extra space between About and Contact sections */
+        #about {
+            margin-bottom: 0 !important;
+            padding-bottom: 0 !important;
+        }
+        #contact {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+        }
+    </style>
     <!-- Contact Section -->
     <section id="contact" class="py-20 px-4 bg-white/10 backdrop-blur-md">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-4xl font-bold text-center text-white mb-16 text-glow hidden-initially animate-fade-in">Get In Touch</h2>
-            <div class="max-w-2xl mx-auto">
-                <form id="contactForm" class="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-xl hidden-initially animate-slide-in-up delay-400">
-                    <div class="space-y-6">
-                        <div class="animate-slide-in-left delay-600">
-                            <label for="name" class="block text-sm font-medium text-white mb-2">Name</label>
-                            <input type="text" id="name" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-300" placeholder="Your Name" required>
+            <div class="flex flex-col md:flex-row items-center gap-12 max-w-4xl mx-auto">
+                <!-- Contact Image -->
+                <div class="md:w-1/2 mb-8 md:mb-0 hidden-initially animate-slide-in-left">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 rounded-2xl blur-xl opacity-60 morphing-shape"></div>
+                        <div class="relative bg-white/10 backdrop-blur-md rounded-2xl overflow-hidden shadow-2xl">
+                            <img src="/_next/images/contact.png" alt="Contact Simone Susinna" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700">
                         </div>
-                        <div class="animate-slide-in-right delay-700">
-                            <label for="email" class="block text-sm font-medium text-white mb-2">Email</label>
-                            <input type="email" id="email" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-300" placeholder="Your Email" required>
+                    </div>
+                </div>
+                <!-- Contact Form -->
+                <div class="md:w-1/2 w-full">
+                    <form id="contactForm" class="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-xl hidden-initially animate-slide-in-up delay-400">
+                        <div class="space-y-6">
+                            <div class="animate-slide-in-left delay-600">
+                                <label for="name" class="block text-sm font-medium text-white mb-2">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-300" placeholder="Your Name" required>
+                            </div>
+                            <div class="animate-slide-in-right delay-700">
+                                <label for="email" class="block text-sm font-medium text-white mb-2">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-300" placeholder="Your Email" required>
+                            </div>
+                            <div class="animate-slide-in-left delay-800">
+                                <label for="message" class="block text-sm font-medium text-white mb-2">Message</label>
+                                <textarea id="message" rows="5" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-300" placeholder="Your Message" required></textarea>
+                            </div>
+                            <div class="flex justify-center mt-8 animate-slide-in-up delay-1000">
+                                <button onclick="showSuccessMessage()" type="submit" class="glow-button text-white font-bold py-4 px-10 rounded-full transition duration-300 ripple pulse-animation flex items-center gap-2">
+                                    <i class="fas fa-paper-plane"></i>
+                                    Send Message
+                                </button>
+                            </div>
                         </div>
-                        <div class="animate-slide-in-left delay-800">
-                            <label for="message" class="block text-sm font-medium text-white mb-2">Message</label>
-                            <textarea id="message" rows="5" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-300" placeholder="Your Message" required></textarea>
-                        </div>
-                        <div class="flex justify-center mt-8 animate-slide-in-up delay-1000">
-                            <button onclick="showSuccessMessage()" type="submit" class="glow-button text-white font-bold py-4 px-10 rounded-full transition duration-300 ripple pulse-animation flex items-center gap-2">
-                                <i class="fas fa-paper-plane"></i>
-                                Send Message
-                            </button>
-                        </div>
-                       
+                    </form>
+                </div>
+            </div>
 
-   <div id="successMessage" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden backdrop-blur-sm">
-    <div class="bg-white rounded-xl max-w-md w-full mx-4 p-8 text-center transform scale-0 transition-all duration-500 ease-out shadow-2xl">
-        <div class="text-6xl mb-4 animate-bounce">✅</div>
-        <h3 class="text-2xl font-bold text-gray-800 mb-2 opacity-0 transform translate-y-4 transition-all duration-700 delay-300">Message Sent!</h3>
-        <p class="text-gray-600 mb-6 opacity-0 transform translate-y-4 transition-all duration-700 delay-500">Thank you for contacting us. We will get back to you shortly.</p>
-        <button onclick="closeSuccessMessage()" class="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 opacity-0 translate-y-4 delay-700 shadow-lg hover:shadow-xl">
-            Close
-        </button>
-    </div>
-</div>
+            <div id="successMessage" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden backdrop-blur-sm">
+                <div class="bg-white rounded-xl max-w-md w-full mx-4 p-8 text-center transform scale-0 transition-all duration-500 ease-out shadow-2xl">
+                    <div class="text-6xl mb-4 animate-bounce">✅</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2 opacity-0 transform translate-y-4 transition-all duration-700 delay-300">Message Sent!</h3>
+                    <p class="text-gray-600 mb-6 opacity-0 transform translate-y-4 transition-all duration-700 delay-500">Thank you for contacting us. We will get back to you shortly.</p>
+                    <button onclick="closeSuccessMessage()" class="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 opacity-0 translate-y-4 delay-700 shadow-lg hover:shadow-xl">
+                        Close
+                    </button>
+                </div>
+            </div>
 
-<style>
-.modal-show .bg-white {
-    animation: modalSlideIn 0.5s ease-out forwards;
-}
+            <style>
+            .modal-show .bg-white {
+                animation: modalSlideIn 0.5s ease-out forwards;
+            }
 
-.modal-show h3 {
-    animation: fadeInUp 0.7s ease-out 0.3s forwards;
-}
+            .modal-show h3 {
+                animation: fadeInUp 0.7s ease-out 0.3s forwards;
+            }
 
-.modal-show p {
-    animation: fadeInUp 0.7s ease-out 0.5s forwards;
-}
+            .modal-show p {
+                animation: fadeInUp 0.7s ease-out 0.5s forwards;
+            }
 
-.modal-show button {
-    animation: fadeInUp 0.7s ease-out 0.7s forwards;
-}
+            .modal-show button {
+                animation: fadeInUp 0.7s ease-out 0.7s forwards;
+            }
 
-@keyframes modalSlideIn {
-    from {
-        transform: scale(0) rotate(180deg);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1) rotate(0deg);
-        opacity: 1;
-    }
-}
+            @keyframes modalSlideIn {
+                from {
+                    transform: scale(0) rotate(180deg);
+                    opacity: 0;
+                }
+                to {
+                    transform: scale(1) rotate(0);
+                    opacity: 1;
+                }
+            }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
 
-@keyframes bounceIn {
-    0% {
-        transform: scale(0.3);
-        opacity: 0;
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    70% {
-        transform: scale(0.9);
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-</style>
+            @keyframes bounceIn {
+                0% {
+                    transform: scale(0.3);
+                    opacity: 0;
+                }
+                50% {
+                    transform: scale(1.05);
+                }
+                70% {
+                    transform: scale(0.9);
+                }
+                100% {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+            }
+            </style>
 
-<script>
-function showSuccessMessage() {
-    const modal = document.getElementById('successMessage');
-    modal.classList.remove('hidden');
-    modal.classList.add('modal-show');
-    
-    // Add bounce animation to checkmark
-    setTimeout(() => {
-        const checkmark = modal.querySelector('.text-6xl');
-        checkmark.style.animation = 'bounceIn 0.6s ease-out';
-    }, 100);
-}
+            <script>
+            function showSuccessMessage() {
+                const modal = document.getElementById('successMessage');
+                modal.classList.remove('hidden');
+                modal.classList.add('modal-show');
+                
+                // Add bounce animation to checkmark
+                setTimeout(() => {
+                    const checkmark = modal.querySelector('.text-6xl');
+                    checkmark.style.animation = 'bounceIn 0.6s ease-out';
+                }, 100);
+            }
 
-function closeSuccessMessage() {
-    const modal = document.getElementById('successMessage');
-    const modalContent = modal.querySelector('.bg-white');
-    
-    modalContent.style.animation = 'modalSlideIn 0.3s ease-in reverse';
-    
-    setTimeout(() => {
-        modal.classList.add('hidden');
-        modal.classList.remove('modal-show');
-        modalContent.style.animation = '';
-    }, 300);
-}
-
-
-</script>       
-
-    </section> 
+            function closeSuccessMessage() {
+                const modal = document.getElementById('successMessage');
+                const modalContent = modal.querySelector('.bg-white');
+                
+                modalContent.style.animation = 'modalSlideIn 0.3s ease-in reverse';
+                
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('modal-show');
+                    modalContent.style.animation = '';
+                }, 300);
+            }
+            </script>
+        </div>
+    </section>
        
     <footer class="footer-bg text-white py-12 px-4 relative">    
         <style>
@@ -1108,18 +1130,13 @@ function closeSuccessMessage() {
                 <div class="footer-section delay-2">
                     <h3 class="text-xl font-bold mb-6 text-white">Connect With Us</h3>
                     <div class="flex space-x-6">
-                        <a href="#" class="social-icon text-gray-300 hover:text-purple-400 relative z-10">
+                        <a href="https://www.instagram.com/p/CR7E2WvopoP/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="social-icon text-gray-300 hover:text-purple-400 relative z-10">
                             <i class="fab fa-instagram text-3xl"></i>
                         </a>
-                        <a href="#" class="social-icon text-gray-300 hover:text-purple-400 relative z-10">
-                            <i class="fab fa-twitter text-3xl"></i>
-                        </a>
-                        <a href="#" class="social-icon text-gray-300 hover:text-purple-400 relative z-10">
+                        <a href="https://www.facebook.com/profile.php?id=61551468923910&mibextid=wwXIfr&mibextid=wwXIfr" class="social-icon text-gray-300 hover:text-purple-400 relative z-10">
                             <i class="fab fa-facebook text-3xl"></i>
                         </a>
-                        <a href="#" class="social-icon text-gray-300 hover:text-purple-400 relative z-10">
-                            <i class="fab fa-youtube text-3xl"></i>
-                        </a>
+                        
                     </div>
                     <div class="mt-6">
                         <p class="text-sm text-gray-400 mb-3">Follow for updates</p>
