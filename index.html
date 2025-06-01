@@ -406,7 +406,17 @@
         </div>
     </div>
    
-
+<style>
+    /* Remove extra space between Hero and Membership sections */
+    section[style*="margin-top:8%"] {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    #membership {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+</style>
 <!-- Membership Section -->
 <section id="membership" class="py-20 px-4 bg-white/10 backdrop-blur-md">
     <div class="max-w-6xl mx-auto">
@@ -580,7 +590,7 @@
             </div>
             
             <div class="text-center mt-12 fade-in-up delay-3">
-                <button class="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                <button onclick="document.getElementById('membership').scrollIntoView({ behavior: 'smooth' });" class="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
                     Join Now
                 </button>
             </div>
@@ -638,7 +648,17 @@
             });
         });
     </script>
-
+    <style>
+        /* Remove extra space between Membership and About sections */
+        #membership {
+            margin-bottom: 0 !important;
+            padding-bottom: 0 !important;
+        }
+        #about {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+        }
+    </style>
     <!-- About Section -->
     <section id="about" class="py-20 px-4 bg-white/10 backdrop-blur-md">
         <div class="max-w-6xl mx-auto">
